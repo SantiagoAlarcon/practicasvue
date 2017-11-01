@@ -10,9 +10,16 @@
 </head>
 <body>
  <div id="app">
+     <div v-bind:title="getFullName()">mi nombre </div>
      <h1>{{message}}</h1>
      <h1>{{caca}}</h1>
      <h1>{{ valor > 50 ? 'Old' : ' Young' }}</h1>
+     <h1>{{ getFullName() }}</h1>
+     <a :href = abcUrl> visita el abc </a>
+     <button v-on:click="clickedButton('you click the button', $event)">pulsame</button>
+
+     <input type="text" v-on:keyup.shift.k="pressedEnter">
+
  </div>
 
 <script>
@@ -21,8 +28,26 @@
         data:{
             message:"hello world",
             caca:"hola macho!",
-            valor:51
+            valor:51,
+            firstName:'Santiago',
+            lastName:'Alarcón',
+            abcUrl: 'http:www.abc.es'
+        },
+        methods:{
+            getFullName: function(){
+                return this.firstName + ' ' + this.lastName;
+            },
+            clickedButton: function (message, event) {
+                console.log(event);
+                alert(message);
+
+            },
+            pressedEnter: function() {
+                alert("esto es un alert");
+            }
+
         }
+
     })
 </script>
     
