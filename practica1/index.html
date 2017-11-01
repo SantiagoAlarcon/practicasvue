@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <script src="vue.js"></script>
+    <script src="script.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+ <div id="app">
+     <h1>{{message}}</h1>
+     <h1>{{caca}}</h1>
+     <h1>{{ valor > 50 ? 'Old' : ' Young' }}</h1>
+ </div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:"hello world",
+            caca:"hola macho!",
+            valor:51
+        }
+    })
+</script>
+    
+</body>
+</html>
